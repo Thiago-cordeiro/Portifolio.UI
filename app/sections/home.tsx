@@ -1,11 +1,23 @@
 "use client";
+import dynamic from "next/dynamic"
 
-import DarkVeil from "@/components/DarkVeil";
+const DarkVeil = dynamic(
+    () => import("@/components/DarkVeil"),
+    { ssr: false }
+);
+
 import { FloatingIcons } from "@/components/FloatingIcons";
 import RotatingText from "@/components/RotatingText";
-import { ArrowDown } from "lucide-react";
+import { ButtonAncora } from "@/components/ui/buttonAncora";
+import { StarGitHub } from "@/components/ui/buttonStarGithub";
+import { useEffect, useState } from "react";
 
 export default function HomeSection() {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        setShow(true);
+    }, []);
 
     const hardskills = [
         "NEXT JS",
@@ -19,16 +31,15 @@ export default function HomeSection() {
     ]
 
     return (
-        <div className="relative w-full h-[100dvh] flex flex-col items-center justify-center dark:bg-black overflow-hidden">
+        <div className="relative w-full h-screen flex flex-col items-center justify-center dark:bg-black overflow-hidden">
 
-            <DarkVeil />
+            {show && <DarkVeil />}
 
             <FloatingIcons />
 
-            {/* Conteúdo */}
             <div className="max-w-4xl text-center absolute max-w-[90%]">
 
-                <h1 className="text-5xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+                <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
                     Densenvolvedor <br />
                     <RotatingText
                         texts={hardskills}
@@ -52,16 +63,17 @@ export default function HomeSection() {
                 <p className="mx-auto mt-8 max-w-2xl text-base text-neutral-300 md:text-lg">
                     Bem-vindo ao meu portfólio. Sou o Thiago, desenvolvedor front-end focado em criar interfaces modernas, responsivas e bem estruturadas.
                 </p>
+
+                <div className="mt-8 flex items-center justify-center">
+                    <StarGitHub></StarGitHub>
+                </div>
+
             </div>
 
-            <button
-                className="absolute bottom-10 w-[4rem] h-[4rem] p-2 flex items-center justify-center border-2 border-dashed border-purple-600 
-                    text-white
-                    rounded-full
-                "
-            >
-                <ArrowDown className="w-7 h-7" />
-            </button>
+            <div className="absolute bottom-10">
+                <ButtonAncora ></ButtonAncora>
+            </div>
+
         </div>
     );
 }

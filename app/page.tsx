@@ -1,4 +1,4 @@
-"use client";
+
 import Image from "next/image";
 import FooterDemo from "./sections/footer";
 import HomeSection from "./sections/home";

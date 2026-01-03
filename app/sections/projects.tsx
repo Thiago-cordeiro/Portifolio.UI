@@ -1,5 +1,5 @@
 "use client";
-
+import Titulo from "@/components/ui/titulo";
 import { Calendar, Code, FileText, User, Clock } from "lucide-react";
 import dynamic from 'next/dynamic'
 
@@ -69,7 +69,7 @@ const timelineData = [
 export function Projects() {
     return (
         <>
-            <h2 className="text-6xl font-bold mt-10 mb-10 p-2 text-center">Timeline Projetos</h2>
+            <Titulo titulo="Timeline Projetos"></Titulo>
             <RadialOrbitalTimeline timelineData={timelineData} />
         </>
     );
