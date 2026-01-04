@@ -1,11 +1,4 @@
 "use client";
-import dynamic from "next/dynamic"
-
-const DarkVeil = dynamic(
-    () => import("@/components/DarkVeil"),
-    { ssr: false }
-);
-
 import { FloatingIcons } from "@/components/FloatingIcons";
 import RotatingText from "@/components/RotatingText";
 import { ButtonAncora } from "@/components/ui/buttonAncora";
@@ -32,8 +25,6 @@ export default function HomeSection() {
 
     return (
         <div className="relative w-full h-screen flex flex-col items-center justify-center dark:bg-black overflow-hidden">
-
-            {show && <DarkVeil />}
 
             <FloatingIcons />
 
