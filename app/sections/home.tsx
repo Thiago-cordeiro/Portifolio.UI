@@ -18,7 +18,7 @@ export default function HomeSection() {
     ]
 
     return (
-        <div className="relative w-full h-[95dvh] flex flex-col items-center justify-center dark:bg-black overflow-hidden">
+        <div className="relative w-full h-[100%] flex flex-col items-center justify-center dark:bg-black overflow-hidden">
 
             <div className="absolute inset-0 overflow-hidden">
                 <video
