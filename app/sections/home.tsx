@@ -3,14 +3,8 @@ import { FloatingIcons } from "@/components/FloatingIcons";
 import RotatingText from "@/components/RotatingText";
 import { ButtonAncora } from "@/components/ui/buttonAncora";
 import { StarGitHub } from "@/components/ui/buttonStarGithub";
-import { useEffect, useState } from "react";
 
 export default function HomeSection() {
-    const [show, setShow] = useState(false);
-
-    useEffect(() => {
-        setShow(true);
-    }, []);
 
     const hardskills = [
         "NEXT JS",
@@ -26,6 +20,20 @@ export default function HomeSection() {
     return (
         <div className="relative w-full h-screen flex flex-col items-center justify-center dark:bg-black overflow-hidden">
 
+            <div className="absolute inset-0 overflow-hidden">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                >
+                    <source src="backgroundDois.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-black/50" />
+            </div>
+
             <FloatingIcons />
 
             <div className="max-w-4xl text-center absolute max-w-[90%]">
@@ -34,7 +42,9 @@ export default function HomeSection() {
                     Densenvolvedor <br />
                     <RotatingText
                         texts={hardskills}
-                        mainClassName="px-2 sm:px-2 md:px-3 text-purple-600 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                        mainClassName="px-2 sm:px-2 md:px-3 
+                        overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center
+                        rounded-lg "
                         staggerFrom={"last"}
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
