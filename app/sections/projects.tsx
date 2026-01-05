@@ -69,7 +69,7 @@ const timelineData = [
 export function Projects() {
     return (
         <>
-            <Titulo titulo="Timeline Projetos"></Titulo>
+            <Titulo titulo="Projects"></Titulo>
             <RadialOrbitalTimeline timelineData={timelineData} />
         </>
     );
