@@ -47,9 +47,20 @@ const timelineData = [
 export function Projects() {
     return (
         <>
-            <div className="m-20">
-                <Titulo titulo="Projects"></Titulo>
-                <RadialOrbitalTimeline timelineData={timelineData} />
+            <div className="relative w-full flex flex-col justify-around items-center h-[700px] mb-20">
+
+                <div className="absolute inset-0 bg-gradient-to-bl from-[#05050a] to-[#010111] overflow-hidden">
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-1/4 w-[15rem] aspect-square rounded-full bg-gradient-to-br from-sky-900/30 to-blue-900/80 blur-[100px]" />
+                    <div className="absolute top-1/2 -translate-y-1/2 -left-1/4 w-[15rem] aspect-square rounded-full bg-gradient-to-br from-blue-900/60 to-sky-900/30 blur-[100px]" />
+                </div>
+
+
+
+                <div className="z-10">
+                    <Titulo titulo="Projects"></Titulo>
+                    <RadialOrbitalTimeline timelineData={timelineData} />
+                </div>
+
             </div>
 
         </>
