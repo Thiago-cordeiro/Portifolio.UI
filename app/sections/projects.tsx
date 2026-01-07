@@ -13,8 +13,8 @@ const timelineData = [
         id: 1,
         title: "Log Inovação",
         date: "Jan 2024",
-        content: "Project planning and requirements gathering phase.",
-        category: "Planning",
+        content: "Landing page, que melhorou a divulgação da Log Inovação.",
+        category: "Log Inovação",
         icon: Calendar,
         relatedIds: [2],
         status: "completed" as const,
@@ -22,55 +22,36 @@ const timelineData = [
     },
     {
         id: 2,
-        title: "Design",
-        date: "Feb 2024",
-        content: "UI/UX design and system architecture.",
-        category: "Design",
+        title: "Análise de CV",
+        date: "NOV 2025",
+        content: "Ajuste de Desempenho e SEO para melhorar o ranqueamento.",
+        category: "SEO",
         icon: FileText,
-        relatedIds: [1, 3],
+        relatedIds: [1],
         status: "completed" as const,
         energy: 90,
     },
     {
         id: 3,
-        title: "Development",
-        date: "Mar 2024",
-        content: "Core features implementation and testing.",
+        title: "Bom Vizinho APP",
+        date: "Dec 2025",
+        content: "Rede Social para conectar vizinhos e promover a colaboração local.",
         category: "Development",
         icon: Code,
-        relatedIds: [2, 4],
+        relatedIds: [2],
         status: "in-progress" as const,
         energy: 60,
-    },
-    {
-        id: 4,
-        title: "Testing",
-        date: "Apr 2024",
-        content: "User testing and bug fixes.",
-        category: "Testing",
-        icon: User,
-        relatedIds: [3, 5],
-        status: "pending" as const,
-        energy: 30,
-    },
-    {
-        id: 5,
-        title: "Release",
-        date: "May 2024",
-        content: "Final deployment and release.",
-        category: "Release",
-        icon: Clock,
-        relatedIds: [4],
-        status: "pending" as const,
-        energy: 10,
-    },
+    }
 ];
 
 export function Projects() {
     return (
         <>
-            <Titulo titulo="Projects"></Titulo>
-            <RadialOrbitalTimeline timelineData={timelineData} />
+            <div className="m-20">
+                <Titulo titulo="Projects"></Titulo>
+                <RadialOrbitalTimeline timelineData={timelineData} />
+            </div>
+
         </>
     );
 }

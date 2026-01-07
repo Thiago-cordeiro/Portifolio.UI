@@ -9,7 +9,9 @@ interface TimelineEntry {
   ano?: string;
   title?: string;
   description?: string;
+  subtitles?: string;
   className?: string;
+  tecnologias?: string[];
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -36,8 +38,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="relative bg-black text-white py-32"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#010111] to-[#05050a] overflow-hidden">
-        <div className="absolute -top-1/3 -right-1/4 w-1/2 aspect-square rounded-full bg-gradient-to-br from-sky-900/30 to-blue-900/80 blur-[100px]" />
-        <div className="absolute -top-1/3 -left-1/4 w-1/2 aspect-square rounded-full bg-gradient-to-br from-blue-900/60 to-sky-900/30 blur-[100px]" />
+        <div className="absolute -top-1/4 -right-1/4 w-1/2 aspect-square rounded-full bg-gradient-to-br from-sky-900/30 to-blue-900/80 blur-[100px]" />
+        <div className="absolute -top-1/4 -left-1/4 w-1/2 aspect-square rounded-full bg-gradient-to-br from-blue-900/60 to-sky-900/30 blur-[100px]" />
       </div>
 
       {/* Header */}
@@ -66,7 +68,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             return (
               <div
                 key={index}
-                // Alterado para justify-center para focar os cards no meio
                 className={`relative flex items-center justify-center w-full`}
               >
                 {/* Marker */}
@@ -77,16 +78,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 </div>
 
                 {/* Wrapper do Card para controle de distância */}
-                <div className={`w-full flex ${isLeft ? "justify-end pr-12" : "justify-start pl-12"}`}>
-                  <div className="max-w-md w-full">
-                    {/* Ajuste o 'max-w-md' (médio) para 'max-w-sm' (mais perto) 
-               ou 'max-w-xs' (muito perto) conforme sua necessidade.
-            */}
+                <div className={`z-30 w-full flex ${isLeft ? "justify-end pr-12" : "justify-start pl-12"}`}>
+                  <div className="max-w-md w-full px-5 md:px-0">
                     <CardTimeLine
                       ano={item.ano}
                       title={item.title}
                       description={item.description}
+                      subtitles={item.subtitles}
                       isLeft={isLeft}
+                      tecnologias={item.tecnologias}
                     />
                   </div>
                 </div>
