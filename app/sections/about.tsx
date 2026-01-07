@@ -99,9 +99,8 @@ export default function AboutSection() {
                         <Feature
                             icon={<Puzzle />}
                             title="Resolução de Problemas"
-                            desc="Turning complex requirements into simple solutions."
+                            desc="Pensamento crítico e habilidades analíticas para resolver desafios complexos."
                         />
-
                     </div>
                 </div>
             </div>
